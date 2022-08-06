@@ -7,6 +7,7 @@ function Subtotal() {
     const [{ basket }, ] = useStateValue();
     
     //This can be replaced with a reducer function that does the total in one line :)
+    //Which is in the reducer.js
     const total = (basket) => {
         let Sum = 0;
         for (const product of basket) {
