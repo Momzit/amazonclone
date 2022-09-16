@@ -16,8 +16,6 @@ This is an Amazon clone challenge by the [Clever programmer youtube channel](htt
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -37,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Momzit/amazonclone)
-- Live Site URL: [Add live site URL here](https://clone-project-b8fd5.firebaseapp.com/)
+- Solution URL: [GitHub](https://github.com/Momzit/amazonclone)
+- Live Site URL: [FakeAmazon](https://clone-project-b8fd5.firebaseapp.com/)
 
 ## My process
 
@@ -82,7 +80,7 @@ I still need to learn more about context api and redux because I think they make
 
 ### Useful resources
 
-- [Example resource 1](https://www.youtube.com/watch?v=RDV3Z1KCBvo&t=30598s&ab_channel=CleverProgrammer) - This is the video I was following along.
+- [Clever programmer video](https://www.youtube.com/watch?v=RDV3Z1KCBvo&t=30598s&ab_channel=CleverProgrammer) - This is the video I was following along.
 
 ## Author
 
