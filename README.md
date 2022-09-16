@@ -1,75 +1,94 @@
-<<<<<<< HEAD
-# amazonclone
-Building an Amazon clone website with React Js and context API
-=======
-# Getting Started with Create React App
+# Amazon clone page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an Amazon clone challenge by the [Clever programmer youtube channel](https://www.youtube.com/c/CleverProgrammer) using React Js and Firebase.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
 
-### `npm test`
+Users should be able to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Add items to the cart
+- View the cart and remove items from it
+- User can login and logout
+- Go to Checkout (Can proceed to checkout but the payment process is not complete because stripe is not setup)
 
-### `npm run build`
+### Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](./fakeamazon.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Solution URL: [Add solution URL here](https://github.com/Momzit/amazonclone)
+- Live Site URL: [Add live site URL here](https://clone-project-b8fd5.firebaseapp.com/)
 
-### `npm run eject`
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Built with
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [React](https://reactjs.org/) - JS library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What I learned
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+I learned about React Js context API and Redux. These concepts help eliminate the need for passing in props and prop drilling, especially when you are working with a more complex project. Context API and Redux provide a global data "storage" whereby all the children of the component surrounded by the stateProvider can access without the need to pass in props. Redux provides a dispatch method that allows for different actions to be triggered such that the context can be updated according to the action perfomed. An example is shwon below for an action of removing an item from a basket (cart) using a reducer function
 
-## Learn More
+```js
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "REMOVE_FROM_BASKET":
+      const index = state.basket.findIndex(
+        (basketItem) => basketItem.id === action.id
+      );
+      let newBasket = [...state.basket];
+      if (index >= 0) {
+        newBasket.splice(index, 1);
+      } else {
+        console.warn(`Product with (id: ${action.id}) is not in the cart`);
+      }
+      return {
+        ...state,
+        basket: newBasket,
+      };
+    default:
+      return state;
+  }
+};
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Continued development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I still need to learn more about context api and redux because I think they make working with states and managing them way easier. I also want to get the stripe payment method working in the future.
 
-### Code Splitting
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Example resource 1](https://www.youtube.com/watch?v=RDV3Z1KCBvo&t=30598s&ab_channel=CleverProgrammer) - This is the video I was following along.
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Website - [Moment](https://clone-project-b8fd5.firebaseapp.com/)
+- GitHub - [@Momzit](https://github.com/Momzit)
 
-### Making a Progressive Web App
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 4c8b988... Initialize project using Create React App
+Thanks to clever programmer for this incredible video that illustrates important concepts about React Js, and how to deploy a project to firebase and implement payment process with stripe.
